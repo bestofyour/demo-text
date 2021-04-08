@@ -1,31 +1,25 @@
 {
-  "editor.tabSize": 2,
-  "editor.fontSize": 12,
-  "window.zoomLevel": 0,
-  "editor.fontWeight": "normal",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "editor.fontSize": 12,
+    "window.zoomLevel": 0,
+    "editor.fontWeight": "normal",
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "file-icons",
-  "cSpell.enableFiletypes": [
-    "!c",
-    "!go",
-    "!java",
-    "!yaml",
-    "vue"
-  ]
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "file-icons",
+    "cSpell.enableFiletypes": ["!c", "!go", "!java", "!yaml", "vue"]
 }

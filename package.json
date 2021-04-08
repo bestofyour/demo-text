@@ -1,0 +1,9 @@
+{
+  "name": "demo-text",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "repository": "git@github.com:bestofyour/demo-text.git",
+  "author": "zourongzhi <zourongzhi1>",
+  "license": "MIT"
+}

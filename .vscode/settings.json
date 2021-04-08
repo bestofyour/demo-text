@@ -20,7 +20,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "vs-seti",
+  "workbench.iconTheme": "file-icons",
   "cSpell.enableFiletypes": [
     "!c",
     "!go",

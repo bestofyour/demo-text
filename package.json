@@ -7,11 +7,14 @@
   "author": "zourongzhi <zourongzhi1>",
   "license": "MIT",
   "scripts": {
-    "server": "webpack-dev-server --config config/webpack.dev.js --open"
+    "server": "webpack-dev-server --config config/webpack.dev.js --open --hot"
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5",
+    "redux-devtools": "^3.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
@@ -39,6 +42,7 @@
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^5.3.1",
     "lodash-webpack-plugin": "^0.11.6",
+    "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "sass-loader": "^11.0.1",
     "source-map-loader": "^2.0.1",

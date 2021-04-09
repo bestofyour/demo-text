@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  & .title {
+    color: red;
+    height: 200px;
+    font-size: 20px;
+  }
+}
+

@@ -8,14 +8,13 @@ module.exports = merge(baseConfig, {
   mode: 'development',
   devtool: 'cheap-source-map',
   devServer: {
-    port: '3000',
+    port: '3050',
     hot: true,
   },
+  entry: path.join(__dirname, '../', 'src/main.jsx'),
   output: {
-    publicPath: '/',
-    path: resolve('dist'),
-    filename: 'js/[name].[hash:8].bundle.js',
-    chunkFilename: 'js/[name].[hash:8].chunk.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
 
   module: {
@@ -24,6 +23,21 @@ module.exports = merge(baseConfig, {
         test: /\.jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
       },
     ],
   },

@@ -10,7 +10,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '../', 'src/main.jsx'),
   module: {
     rules: [
       {
@@ -36,27 +35,34 @@ module.exports = {
       loaders: ['babel-loader?cacheDirectory'],
     }),
 
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin(
+      Object.assign(
+      {},
+      {
+        inject: true,
+        template: path.join(__dirname, '../', 'public/index.html'),
+      },
+      {
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
+      }
+    
+  )),
 
     new WebpackBar(),
     new DuplicatePackageCheckerPlugin(),
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: 'server',
-    //   analyzerHost: '127.0.0.1',
-    //   analyzerPort: 6688,
-    //   reportFilename: 'report.html',
-    //   defaultSizes: 'parsed',
-    //   openAnalyzer: true,
-    //   generateStatsFile: false,
-    //   statsFilename: 'stats.json',
-    //   statsOptions: null,
-    //   logLevel: 'info',
-    // }),
     new CleanWebpackPlugin(),
     new LodashModuleReplacementPlugin(),
     new AddAssetHtmlPlugin(),
-    // new Jarvis({
-    //   port: 1337, // optional: set a port
-    // }),
   ],
 };

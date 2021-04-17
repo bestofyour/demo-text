@@ -3,7 +3,15 @@ import ReactDom from 'react-dom';
 import './style/index.scss';
 
 
-const div = <div className="title">这是yy1111yy</div>
+const arr = _.chunk(['a', 'b', 'c', 'd'], 2);
+
+const click =(arr)=> {
+  console.log(arr)
+}
+
+
+const div = <div className="title" onClick={click}>1111</div>
+
 
 function App() {
   return div;

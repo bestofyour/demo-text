@@ -8,6 +8,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const webpack = require('webpack');
+const PurifyCssWebpack = require('purifycss-webpack') // 引入PurifyCssWebpack插件
+const glob = require('glob') // 引入glob模块,用于扫描全部html文件中所引用的css
 
 module.exports = {
   module: {
@@ -58,11 +61,20 @@ module.exports = {
       }
     
   )),
-
+    new webpack.HotModuleReplacementPlugin(), // 热更新插件
     new WebpackBar(),
     new DuplicatePackageCheckerPlugin(),
     new CleanWebpackPlugin(),
     new LodashModuleReplacementPlugin(),
     new AddAssetHtmlPlugin(),
+
+    new PurifyCssWebpack({
+      paths: glob.sync(path.join(__dirname, 'src/*.html')),
+    }),
+
+    new webpack.ProvidePlugin({
+      React: 'react',
+      _: 'lodash',
+    }),
   ],
 };
